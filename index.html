@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
   <title>For Aparanjitha</title>
   
   <!-- Favicon: Small lavender heart -->
@@ -14,6 +14,11 @@
   <meta property="og:description" content="A letter for you.">
   <meta property="og:type" content="website">
   <meta name="theme-color" content="#0f0f1a">
+  
+  <!-- iOS specific -->
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="For Aparanjitha">
   
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -38,6 +43,7 @@
 
     html {
       scroll-behavior: smooth;
+      -webkit-text-size-adjust: 100%; /* Prevent font scaling in landscape */
     }
 
     body {
@@ -46,6 +52,8 @@
       color: var(--text-body);
       line-height: 1.8;
       overflow-x: hidden;
+      -webkit-font-smoothing: antialiased; /* Smoother fonts on iOS */
+      -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
     }
 
     /* Subtle grain overlay */
@@ -350,6 +358,82 @@
         padding: 3rem 1.5rem;
       }
     }
+
+    /* iPhone 12 specific (390px viewport) */
+    @media (max-width: 390px) {
+      .landing {
+        padding: 2rem 1.25rem;
+      }
+
+      .landing-title {
+        font-size: 2.4rem;
+        letter-spacing: 0.01em;
+      }
+
+      .landing-subtitle {
+        font-size: 0.95rem;
+        max-width: 280px;
+      }
+
+      .item-section {
+        padding: 2.5rem 1.25rem;
+        min-height: 100svh; /* Safari viewport height fix */
+      }
+
+      .item-name {
+        font-size: 0.95rem;
+        letter-spacing: 0.2em;
+      }
+
+      .item-tagline {
+        font-size: 1.6rem;
+        margin-bottom: 2rem;
+      }
+
+      .item-story {
+        font-size: 0.95rem;
+        line-height: 1.85;
+      }
+
+      .closing-section {
+        padding: 2.5rem 1.25rem;
+        min-height: 100svh;
+      }
+
+      .closing-title {
+        font-size: 1.4rem;
+      }
+
+      .closing-text {
+        font-size: 0.95rem;
+        line-height: 2;
+      }
+
+      .closing-signature {
+        font-size: 1.5rem;
+      }
+    }
+
+    /* Safe area for iPhone notch */
+    @supports (padding: max(0px)) {
+      .landing {
+        padding-top: max(2rem, env(safe-area-inset-top));
+        padding-bottom: max(2rem, env(safe-area-inset-bottom));
+      }
+
+      .closing-section {
+        padding-bottom: max(3rem, env(safe-area-inset-bottom));
+      }
+    }
+
+    /* Fix for Safari's dynamic viewport */
+    @supports (min-height: 100svh) {
+      .landing,
+      .item-section,
+      .closing-section {
+        min-height: 100svh;
+      }
+    }
   </style>
 </head>
 <body>
@@ -505,6 +589,18 @@
     document.querySelectorAll('[data-item], [data-closing]').forEach(section => {
       observer.observe(section);
     });
+
+    // Fade out scroll hint when user starts scrolling
+    const scrollHint = document.querySelector('.scroll-hint');
+    let scrollHintHidden = false;
+    
+    window.addEventListener('scroll', () => {
+      if (!scrollHintHidden && window.scrollY > 50) {
+        scrollHint.style.opacity = '0';
+        scrollHint.style.transition = 'opacity 0.5s ease';
+        scrollHintHidden = true;
+      }
+    }, { passive: true });
   </script>
 
 </body>
