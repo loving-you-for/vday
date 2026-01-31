@@ -1,28 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
   <title>For Aparanjitha</title>
-  
+
   <!-- Favicon: Small lavender heart -->
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💜</text></svg>">
-  
+  <link rel="icon"
+    href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💜</text></svg>">
+
   <!-- Meta tags for link preview -->
   <meta name="description" content="A letter for you.">
   <meta property="og:title" content="For Aparanjitha">
   <meta property="og:description" content="A letter for you.">
   <meta property="og:type" content="website">
   <meta name="theme-color" content="#0f0f1a">
-  
+
   <!-- iOS specific -->
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="apple-mobile-web-app-title" content="For Aparanjitha">
-  
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Lora:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Lora:ital,wght@0,400;0,500;1,400&display=swap"
+    rel="stylesheet">
   <style>
     :root {
       --bg-deep: #0f0f1a;
@@ -39,11 +43,16 @@
       margin: 0;
       padding: 0;
       box-sizing: border-box;
+      -webkit-tap-highlight-color: transparent;
+      /* Remove tap highlight on iOS */
     }
 
     html {
       scroll-behavior: smooth;
-      -webkit-text-size-adjust: 100%; /* Prevent font scaling in landscape */
+      scroll-snap-type: y mandatory;
+      /* Enable scroll snapping */
+      -webkit-text-size-adjust: 100%;
+      /* Prevent font scaling in landscape */
     }
 
     body {
@@ -52,8 +61,10 @@
       color: var(--text-body);
       line-height: 1.8;
       overflow-x: hidden;
-      -webkit-font-smoothing: antialiased; /* Smoother fonts on iOS */
-      -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
+      -webkit-font-smoothing: antialiased;
+      /* Smoother fonts on iOS */
+      -webkit-overflow-scrolling: touch;
+      /* Smooth scrolling on iOS */
     }
 
     /* Subtle grain overlay */
@@ -72,6 +83,8 @@
 
     /* Landing Section */
     .landing {
+      scroll-snap-align: start;
+      scroll-snap-stop: always;
       min-height: 100vh;
       display: flex;
       flex-direction: column;
@@ -150,6 +163,8 @@
 
     /* Item Sections */
     .item-section {
+      scroll-snap-align: start;
+      scroll-snap-stop: always;
       min-height: 100vh;
       display: flex;
       flex-direction: column;
@@ -238,6 +253,8 @@
 
     /* Closing Section */
     .closing-section {
+      scroll-snap-align: start;
+      scroll-snap-stop: always;
       min-height: 100vh;
       display: flex;
       flex-direction: column;
@@ -326,6 +343,7 @@
         opacity: 0;
         transform: translateY(20px);
       }
+
       to {
         opacity: 1;
         transform: translateY(0);
@@ -333,10 +351,13 @@
     }
 
     @keyframes pulse {
-      0%, 100% {
+
+      0%,
+      100% {
         opacity: 0.4;
         transform: scaleY(1);
       }
+
       50% {
         opacity: 0.8;
         transform: scaleY(1.1);
@@ -348,7 +369,7 @@
       .item-section {
         padding: 3rem 1.5rem;
       }
-      
+
       .item-story {
         font-size: 1rem;
         line-height: 1.9;
@@ -377,7 +398,8 @@
 
       .item-section {
         padding: 2.5rem 1.25rem;
-        min-height: 100svh; /* Safari viewport height fix */
+        min-height: 100svh;
+        /* Safari viewport height fix */
       }
 
       .item-name {
@@ -393,6 +415,7 @@
       .item-story {
         font-size: 0.95rem;
         line-height: 1.85;
+        letter-spacing: 0.015em;
       }
 
       .closing-section {
@@ -428,6 +451,7 @@
 
     /* Fix for Safari's dynamic viewport */
     @supports (min-height: 100svh) {
+
       .landing,
       .item-section,
       .closing-section {
@@ -436,6 +460,7 @@
     }
   </style>
 </head>
+
 <body>
 
   <!-- Landing -->
@@ -456,7 +481,11 @@
       <p class="item-name">Lavender Pillow Mist</p>
       <h2 class="item-tagline">"For the nights your mind won't shut up"</h2>
       <p class="item-story">
-        I know how your brain works. You come home exhausted, but the moment your head hits the pillow, it starts — the patients, the cases, the things you need to study, the exam. I can't turn it off for you. I wish I could. But I read that lavender actually helps (there are real studies, I checked). So now, every night before you sleep, spray this. Breathe. And maybe, just maybe, your brain will be a little quieter. And if it helps — think of me while you drift off.
+        I know how your brain works. You come home exhausted, but the moment your head hits the pillow, it starts — the
+        patients, the cases, the things you need to study, the exam. I can't turn it off for you. I wish I could. But I
+        read that lavender actually helps (there are real studies, I checked). So now, every night before you sleep,
+        spray this. Breathe. And maybe, just maybe, your brain will be a little quieter. And if it helps — think of me
+        while you drift off.
       </p>
     </div>
   </section>
@@ -468,7 +497,9 @@
       <p class="item-name">Hand Cream</p>
       <h2 class="item-tagline">"Because I've held those hands"</h2>
       <p class="item-story">
-        You wash them a hundred times a day. Sanitizer, soap, repeat. They take care of everyone else — patients, charts, procedures. But no one takes care of them. I've held your hands. I know how they feel. I want them soft and loved, even when I'm not there to hold them.
+        You wash them a hundred times a day. Sanitizer, soap, repeat. They take care of everyone else — patients,
+        charts, procedures. But no one takes care of them. I've held your hands. I know how they feel. I want them soft
+        and loved, even when I'm not there to hold them.
       </p>
     </div>
   </section>
@@ -480,7 +511,8 @@
       <p class="item-name">Lip Balm</p>
       <h2 class="item-tagline">"The small things matter"</h2>
       <p class="item-story">
-        This one's simple. Hospital air is dry. You forget to drink water. Your lips crack. I notice. So here — keep this in your pocket. Use it. Think of me when you do.
+        This one's simple. Hospital air is dry. You forget to drink water. Your lips crack. I notice. So here — keep
+        this in your pocket. Use it. Think of me when you do.
       </p>
     </div>
   </section>
@@ -492,7 +524,10 @@
       <p class="item-name">Sunscreen</p>
       <h2 class="item-tagline">"Because someone has to take care of you"</h2>
       <p class="item-story">
-        You won't remember to put this on. I know. You'll rush out, running late, head already somewhere else. But I'll remember for you. I'll nag you. I'll ask "did you use it?" until you're annoyed. Because you take care of everyone else. Patients, family, friends. But you forget yourself. So let me do this. Let me be the one who protects you — even from the sun.
+        You won't remember to put this on. I know. You'll rush out, running late, head already somewhere else. But I'll
+        remember for you. I'll nag you. I'll ask "did you use it?" until you're annoyed. Because you take care of
+        everyone else. Patients, family, friends. But you forget yourself. So let me do this. Let me be the one who
+        protects you — even from the sun.
       </p>
     </div>
   </section>
@@ -504,7 +539,10 @@
       <p class="item-name">Hydrating Face Mist</p>
       <h2 class="item-tagline">"Because endings matter"</h2>
       <p class="item-story">
-        Your days start in chaos. I can't fix that. But I can fix how they end. So before you sleep — after the day has taken everything from you — close your eyes and spray this. One spritz. Feel it land on your skin. Cool. Light. Like a small breath before rest. That's me. Saying the day is done. Saying you did enough. Saying goodnight, I love you, sleep well.
+        Your days start in chaos. I can't fix that. But I can fix how they end. So before you sleep — after the day has
+        taken everything from you — close your eyes and spray this. One spritz. Feel it land on your skin. Cool. Light.
+        Like a small breath before rest. That's me. Saying the day is done. Saying you did enough. Saying goodnight, I
+        love you, sleep well.
       </p>
     </div>
   </section>
@@ -516,7 +554,9 @@
       <p class="item-name">Compact Mirror</p>
       <h2 class="item-tagline">"To remind you of what I see"</h2>
       <p class="item-story">
-        You'll use this to check your face, fix your hair, look professional. That's fine. But every time you open it, I want you to see what I see — someone strong, someone kind, someone who's going to be an incredible doctor. You're beautiful. Even when you're exhausted. Especially then.
+        You'll use this to check your face, fix your hair, look professional. That's fine. But every time you open it, I
+        want you to see what I see — someone strong, someone kind, someone who's going to be an incredible doctor.
+        You're beautiful. Even when you're exhausted. Especially then.
       </p>
     </div>
   </section>
@@ -538,10 +578,12 @@
     <div class="closing-content">
       <h2 class="closing-title">"Why all of this?"</h2>
       <p class="closing-text">
-        I can't be there every night when you come home drained. I can't hold you when the day has been too long. I can't make this easier.
+        I can't be there every night when you come home drained. I can't hold you when the day has been too long. I
+        can't make this easier.
       </p>
       <p class="closing-text">
-        But I can do this — small things, quiet things, things that say "I'm thinking of you" without anyone else knowing.
+        But I can do this — small things, quiet things, things that say "I'm thinking of you" without anyone else
+        knowing.
       </p>
       <p class="closing-text">
         Every item here is a piece of me staying with you when I can't be there in person.
@@ -581,7 +623,7 @@
     // Fade out scroll hint when user starts scrolling
     const scrollHint = document.querySelector('.scroll-hint');
     let scrollHintHidden = false;
-    
+
     window.addEventListener('scroll', () => {
       if (!scrollHintHidden && window.scrollY > 50) {
         scrollHint.style.opacity = '0';
@@ -592,4 +634,5 @@
   </script>
 
 </body>
+
 </html>
